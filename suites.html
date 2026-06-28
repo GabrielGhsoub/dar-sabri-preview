@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les Suites — Dar Sabri, Médina de Nabeul</title>
+<meta name="description" content="Quatre suites d'exception à Dar Sabri : Suite Or, Suite Argent, Ymen Suite et Suite Ébène. Médina de Nabeul.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a2436;--ink-soft:#3a4658;--gold:#b3905a;--gold-d:#9a7945;--cream:#f6f1e8;--cream-2:#efe7d8;--teal:#2f7d7d;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-weight:300;line-height:1.7;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:14px 28px;border:1px solid var(--gold);color:var(--gold);transition:.5s;border-radius:1px}
+.btn:hover{background:var(--gold);color:#fff}
+.rule{width:54px;height:1px;background:var(--gold);margin:20px 0}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:22px 40px;transition:.5s;background:rgba(246,241,232,.96);box-shadow:0 1px 30px rgba(26,36,54,.08);backdrop-filter:blur(6px)}
+nav .brand{font-family:var(--serif);font-size:24px;letter-spacing:.22em;color:var(--ink)}
+nav .links{display:flex;gap:34px;align-items:center}
+nav .links a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:.4s}
+nav .links a:hover{color:var(--gold)}
+nav .lang{display:flex;gap:8px;font-size:11px}
+nav .lang span{opacity:.5;cursor:pointer}
+nav .lang span.on{opacity:1;color:var(--gold)}
+nav .navbtn{border:1px solid var(--gold);color:var(--gold);padding:9px 20px}
+nav .navbtn:hover{background:var(--gold);color:#fff}
+.subhero{height:64vh;min-height:440px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.subhero .bg{position:absolute;inset:-8% 0;height:116%;background:url(img/suite-ymen.jpg) center/cover;will-change:transform}
+.subhero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,44,.55),rgba(20,28,44,.4))}
+.subhero .inner{position:relative;z-index:2;color:#fff}
+.subhero h1{font-size:clamp(44px,8vw,86px);color:#fff;font-weight:400}
+.subhero .eyebrow{color:#e9d9b8;display:block;margin-bottom:18px}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.suite-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:104px 0}
+.suite-row:nth-child(even) .txt{order:2}
+.suite-row .imgwrap{position:relative;overflow:hidden;border-radius:2px}
+.suite-row .imgwrap img{width:100%;height:560px;object-fit:cover;transition:transform 1.5s ease}
+.suite-row .imgwrap:hover img{transform:scale(1.06)}
+.suite-row .imgwrap::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.45);pointer-events:none}
+.suite-row .num{font-family:var(--serif);font-size:16px;color:var(--gold);letter-spacing:.2em}
+.suite-row h2{font-size:clamp(34px,4.6vw,56px);margin:8px 0}
+.suite-row p{color:var(--ink-soft);font-size:17px;margin-bottom:14px}
+.amen{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
+.amen span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);border:1px solid #d9cfbb;padding:7px 13px;border-radius:1px}
+.divider{border:0;border-top:1px solid #e3dccd;max-width:1136px;margin:0 auto}
+.cta{background:var(--ink);color:var(--cream);text-align:center;padding:100px 0}
+.cta h2{color:#fff;font-size:clamp(30px,4vw,46px)}
+.cta .btn{border-color:var(--gold);color:var(--gold);margin-top:26px}
+.cta .btn:hover{background:var(--gold);color:#fff}
+footer{background:#141c2c;color:rgba(246,241,232,.7);padding:60px 0 28px;text-align:center}
+footer .brand{font-family:var(--serif);font-size:26px;letter-spacing:.2em;color:#fff;margin-bottom:12px}
+footer .fbot{margin-top:24px;font-size:12px;color:rgba(246,241,232,.5);display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.preview-flag{position:fixed;right:0;bottom:0;z-index:1500;background:var(--ink);color:var(--cream);font-size:11px;letter-spacing:.12em;padding:8px 16px;border-top-left-radius:4px}
+.preview-flag b{color:var(--gold)}
+@media(max-width:920px){nav .links{display:none}.suite-row{grid-template-columns:1fr;gap:30px;padding:64px 0}.suite-row:nth-child(even) .txt{order:0}.suite-row .imgwrap img{height:380px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">DAR SABRI</a>
+  <div class="links">
+    <a href="index.html#maison">La Maison</a>
+    <a href="suites.html">Suites</a>
+    <a href="index.html#galerie">Galerie</a>
+    <a href="index.html#avis">Avis</a>
+    <div class="lang"><span class="on">FR</span><span>EN</span><span>AR</span></div>
+    <a href="index.html#reserver" class="navbtn">Réserver</a>
+  </div>
+</nav>
+
+<header class="subhero">
+  <div class="bg" id="shBg"></div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="eyebrow">Nos chambres</span>
+    <h1>Quatre suites, quatre histoires</h1>
+  </div>
+</header>
+
+<section class="wrap">
+
+  <div class="suite-row">
+    <div class="txt reveal">
+      <div class="num">01</div>
+      <h2>Suite Or</h2>
+      <div class="rule"></div>
+      <p>Au rez-de-chaussée, une suite traditionnelle tunisienne tout en longueur, baignée de lumière naturelle. Les matériaux nobles et l'artisanat local y dialoguent avec un confort résolument contemporain.</p>
+      <div class="amen"><span>Rez-de-chaussée</span><span>2 personnes</span><span>Salle de bain privée</span><span>Patio</span></div>
+      <a href="index.html#reserver" class="btn">Réserver cette suite</a>
+    </div>
+    <div class="imgwrap reveal"><img src="img/suite-or.jpg" alt="Suite Or"></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="suite-row">
+    <div class="txt reveal">
+      <div class="num">02</div>
+      <h2>Suite Argent</h2>
+      <div class="rule"></div>
+      <p>La sérénité avant tout. Des teintes douces inspirées des plages de sable fin de la côte tunisienne, pour une parenthèse de calme absolu à deux pas de la médina.</p>
+      <div class="amen"><span>Teintes douces</span><span>2 personnes</span><span>Salle de bain privée</span><span>Vue patio</span></div>
+      <a href="index.html#reserver" class="btn">Réserver cette suite</a>
+    </div>
+    <div class="imgwrap reveal"><img src="img/suite-argent.jpg" alt="Suite Argent"></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="suite-row">
+    <div class="txt reveal">
+      <div class="num">03</div>
+      <h2>Ymen Suite</h2>
+      <div class="rule"></div>
+      <p>À l'étage, une suite d'exception qui ravira les amateurs d'art contemporain. L'artiste peintre tunisienne Ymen Berhouma a prêté son nom et son univers à cette chambre unique, véritable oeuvre habitée.</p>
+      <div class="amen"><span>À l'étage</span><span>Art contemporain</span><span>2 personnes</span><span>Lumineuse</span></div>
+      <a href="index.html#reserver" class="btn">Réserver cette suite</a>
+    </div>
+    <div class="imgwrap reveal"><img src="img/suite-ymen.jpg" alt="Ymen Suite"></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="suite-row">
+    <div class="txt reveal">
+      <div class="num">04</div>
+      <h2>Suite Ébène</h2>
+      <div class="rule"></div>
+      <p>Le contraste du noir et du blanc, une suite au caractère affirmé. Lignes épurées et art graphique pour les amoureux du design et des ambiances contemporaines.</p>
+      <div class="amen"><span>Caractère</span><span>Design</span><span>2 personnes</span><span>Salle de bain privée</span></div>
+      <a href="index.html#reserver" class="btn">Réserver cette suite</a>
+    </div>
+    <div class="imgwrap reveal"><img src="img/suite-ebene.jpg" alt="Suite Ébène"></div>
+  </div>
+
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:var(--gold)">Votre séjour</span>
+    <h2 style="margin-top:14px">Réservez en direct,<br>au meilleur tarif</h2>
+    <a href="index.html#reserver" class="btn">Vérifier les disponibilités</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">DAR SABRI</div>
+    <p>Maison d'hôtes haut de gamme &middot; Médina de Nabeul, Tunisie</p>
+    <div class="fbot">
+      <span>&copy; 2026 Dar Sabri</span>
+      <span>info@dar-sabri.com</span>
+      <span>Aperçu de concept réalisé par Likwiid</span>
+    </div>
+  </div>
+</footer>
+
+<div class="preview-flag">Aperçu de concept &middot; <b>Likwiid</b></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.16});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);
+  gsap.to('#shBg',{yPercent:16,ease:'none',scrollTrigger:{trigger:'.subhero',start:'top top',end:'bottom top',scrub:true}});}
+</script>
+</body>
+</html>
