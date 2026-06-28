@@ -145,5 +145,17 @@
 ],
 "book.confirmed_t": "Your request is confirmed",
 "book.confirmed_p": "Thank you so much. We will send your confirmation by email in just a few moments.",
-"ui.included": "Included"
+"ui.included": "Included",
+"ui.back": "Back",
+"suite.gallery_t": "Suite gallery",
+"suite.others_t": "Discover the other suites",
+"fact.capacity": "Capacity",
+"fact.floor": "Floor",
+"fact.bath": "Bathroom",
+"fact.style": "Style",
+"fact.bath_v": "Private",
+"suite.or.floor": "Ground floor",
+"suite.argent.floor": "Ground floor",
+"suite.ymen.floor": "Upper floor",
+"suite.ebene.floor": "Upper floor"
 }

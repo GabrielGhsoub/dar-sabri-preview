@@ -145,5 +145,17 @@
 ],
 "book.confirmed_t": "تم تأكيد طلبك",
 "book.confirmed_p": "شكرًا جزيلًا لك. سنرسل لك التأكيد عبر البريد الإلكتروني خلال لحظات.",
-"ui.included": "مشمول"
+"ui.included": "مشمول",
+"ui.back": "رجوع",
+"suite.gallery_t": "معرض صور الجناح",
+"suite.others_t": "اكتشف الأجنحة الأخرى",
+"fact.capacity": "السعة",
+"fact.floor": "الطابق",
+"fact.bath": "الحمّام",
+"fact.style": "الطابع",
+"fact.bath_v": "خاصة",
+"suite.or.floor": "الطابق الأرضي",
+"suite.argent.floor": "الطابق الأرضي",
+"suite.ymen.floor": "الطابق العلوي",
+"suite.ebene.floor": "الطابق العلوي"
 }

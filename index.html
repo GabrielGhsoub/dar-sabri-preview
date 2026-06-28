@@ -235,33 +235,56 @@ footer .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
 .preview-flag b{color:var(--gold)}
 
 /* ===== SUITE OVERLAY ===== */
-.suite-modal{position:fixed;inset:0;z-index:1600;display:none}
-.suite-modal.open{display:block}
-.suite-modal .sm-scrim{position:absolute;inset:0;background:rgba(15,20,32,.55);backdrop-filter:blur(3px);opacity:0;transition:.5s}
-.suite-modal.open .sm-scrim{opacity:1}
-.sm-panel{position:absolute;top:0;right:0;height:100%;width:min(920px,100%);background:var(--cream);overflow-y:auto;transform:translateX(100%);transition:transform .6s var(--ease)}
-html[dir=rtl] .sm-panel{right:auto;left:0;transform:translateX(-100%)}
-.suite-modal.open .sm-panel{transform:none}
-.sm-hero{position:relative;height:46vh;min-height:320px;overflow:hidden}
-.sm-hero img{width:100%;height:100%;object-fit:cover}
-.sm-hero .sm-scrim2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,44,.2),rgba(20,28,44,.6))}
-.sm-hero .sm-cap{position:absolute;left:44px;bottom:34px;right:44px;color:#fff;z-index:2}
-.sm-hero .sm-tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(255,255,255,.6);padding:6px 12px;border-radius:1px;display:inline-block;margin-bottom:14px}
-.sm-hero h2{font-size:clamp(36px,5vw,58px);color:#fff}
-.sm-close{position:absolute;top:24px;right:24px;z-index:5;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);border:0;cursor:pointer;font-size:18px;color:var(--ink);transition:.3s}
-html[dir=rtl] .sm-close{right:auto;left:24px}
-.sm-close:hover{background:#fff;transform:rotate(90deg)}
-.sm-body{padding:40px 44px 60px}
-.sm-lead{font-family:var(--serif);font-size:22px;line-height:1.5;color:var(--ink);max-width:640px}
-.sm-amen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}
-.sm-amen .a{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-soft)}
-.sm-amen .a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.sm-gal{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:130px;gap:10px;margin:22px 0 32px}
-.sm-gal img{width:100%;height:100%;object-fit:cover;border-radius:2px}
-.sm-gal img:first-child{grid-row:span 2;height:270px}
-.sm-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #e3dccd;padding-top:26px}
-.sm-foot .pr{font-size:14px;color:var(--ink-soft)}
-.sm-foot .pr b{font-family:var(--serif);font-size:34px;color:var(--ink);display:block}
+.suite-page{position:fixed;inset:0;z-index:1600;background:var(--cream);overflow-y:auto;overflow-x:hidden;opacity:0;visibility:hidden;transition:opacity .55s var(--ease),visibility .55s}
+.suite-page.open{opacity:1;visibility:visible}
+.suite-page .sp-inner{transform:translateY(26px);transition:transform .7s var(--ease)}
+.suite-page.open .sp-inner{transform:none}
+.sp-back{position:fixed;top:26px;left:30px;z-index:20;display:inline-flex;align-items:center;gap:9px;background:rgba(246,241,232,.92);backdrop-filter:blur(6px);border:1px solid rgba(179,144,90,.45);color:var(--ink);padding:11px 22px;border-radius:30px;cursor:pointer;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;transition:.4s}
+html[dir=rtl] .sp-back{left:auto;right:30px}
+.sp-back:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.sp-back .ar{display:inline-block;transition:.4s}.sp-back:hover .ar{transform:translateX(-4px)}
+html[dir=rtl] .sp-back .ar{transform:scaleX(-1)}html[dir=rtl] .sp-back:hover .ar{transform:scaleX(-1) translateX(-4px)}
+.sp-hero{position:relative;height:84vh;min-height:540px;overflow:hidden;display:flex;align-items:flex-end}
+.sp-hero .sp-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:kenburns 26s ease-out infinite alternate}
+.sp-hero .sp-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,44,.4) 0%,rgba(20,28,44,0) 34%,rgba(20,28,44,.72) 100%)}
+.sp-hero .sp-cap{position:relative;z-index:2;color:#fff;width:100%;max-width:1180px;margin:0 auto;padding:0 48px 56px}
+.sp-tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;border:1px solid rgba(255,255,255,.6);padding:7px 14px;border-radius:1px;display:inline-block;margin-bottom:20px;color:#fff}
+.sp-hero h1{font-size:clamp(46px,7vw,92px);color:#fff;font-weight:400;line-height:1}
+.sp-pr{margin-top:18px;font-size:15px;color:#e9d9b8}.sp-pr b{font-family:var(--serif);font-size:26px;color:#fff}
+.sp-wrap{max-width:1000px;margin:0 auto;padding:0 48px}
+.sp-story{padding:96px 0 70px;text-align:center}
+.sp-story .eyebrow{display:block;margin-bottom:20px}
+.sp-lead{font-family:var(--serif);font-size:clamp(23px,2.8vw,33px);line-height:1.45;color:var(--ink);font-weight:400;max-width:760px;margin:0 auto}
+.sp-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid #e3dccd;border-bottom:1px solid #e3dccd;padding:34px 0}
+.sp-fact{text-align:center}
+.sp-fact .fv{font-family:var(--serif);font-size:23px;color:var(--ink)}
+.sp-fact .fl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:7px}
+.sp-feat{height:62vh;min-height:400px;background-size:cover;background-position:center;background-attachment:fixed;margin:80px 0 90px}
+.sp-amen-sec{padding-bottom:84px}
+.sp-amen-sec h2{font-size:clamp(28px,3.4vw,40px);text-align:center;margin-bottom:36px}
+.sp-amen{display:grid;grid-template-columns:repeat(3,1fr);gap:0 44px;max-width:780px;margin:0 auto}
+.sp-amen .a{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-soft);padding:14px 0;border-bottom:1px solid #ece4d4}
+.sp-amen .a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.sp-gal-sec{padding-bottom:92px}
+.sp-gal-sec h2{font-size:clamp(28px,3.4vw,40px);text-align:center;margin-bottom:40px}
+.sp-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:0 auto;padding:0 24px}
+.sp-gal .g{overflow:hidden;border-radius:2px;height:280px}
+.sp-gal .g img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
+.sp-gal .g:hover img{transform:scale(1.08)}
+.sp-gal .g:first-child{grid-column:span 3;height:480px}
+.sp-book{background:var(--ink);color:var(--cream);text-align:center;padding:96px 24px}
+.sp-book .eyebrow{color:var(--gold);display:block;margin-bottom:16px}
+.sp-book h2{font-size:clamp(30px,4vw,48px);color:#fff;margin-bottom:12px}
+.sp-bpr{font-size:14px;color:rgba(246,241,232,.7);margin-bottom:32px}.sp-bpr b{font-family:var(--serif);font-size:28px;color:var(--gold)}
+.sp-others{padding:94px 0}
+.sp-others h2{text-align:center;font-size:clamp(26px,3vw,38px);margin-bottom:42px}
+.sp-others-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;padding:0 24px}
+.sp-other{position:relative;height:340px;overflow:hidden;border-radius:2px;cursor:pointer}
+.sp-other img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.sp-other:hover img{transform:scale(1.08)}
+.sp-other .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(20,28,44,.82))}
+.sp-other .on{position:absolute;bottom:22px;left:26px;right:26px;color:#fff;font-family:var(--serif);font-size:25px;z-index:2}
+html[dir=rtl] .sp-other .on{left:26px;right:26px;text-align:right}
 
 @media(max-width:920px){
   nav{padding:16px 20px}
@@ -275,8 +298,16 @@ html[dir=rtl] .sm-close{right:auto;left:24px}
   .bk-suites{grid-template-columns:1fr 1fr}.bk-extras{grid-template-columns:1fr}
   .rev-cards,footer .fcols{grid-template-columns:1fr}
   .pad{padding:80px 0}
-  .sm-body{padding:30px 24px 50px}.sm-amen{grid-template-columns:1fr 1fr}.sm-gal{grid-template-columns:1fr 1fr}
   .cal{width:300px}
+  .sp-hero{height:74vh}.sp-hero .sp-cap{padding:0 24px 40px}
+  .sp-back{top:18px;left:18px;padding:9px 16px}
+  .sp-wrap{padding:0 24px}.sp-story{padding:60px 0 50px}
+  .sp-facts{grid-template-columns:1fr 1fr;gap:26px 14px}
+  .sp-feat{height:44vh;margin:50px 0 60px;background-attachment:scroll}
+  .sp-amen{grid-template-columns:1fr 1fr;gap:0 24px}
+  .sp-gal{grid-template-columns:1fr 1fr;padding:0 18px}.sp-gal .g{height:200px}.sp-gal .g:first-child{grid-column:span 2;height:260px}
+  .sp-book{padding:70px 24px}
+  .sp-others-grid{grid-template-columns:1fr;padding:0 18px}.sp-other{height:260px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .ln span{transform:none}.hero .eyebrow,.hero .lede,.hero .inner .btn{opacity:1}}
 </style>
@@ -460,23 +491,32 @@ html[dir=rtl] .sm-close{right:auto;left:24px}
   </div>
 </footer>
 
-<div class="suite-modal" id="suiteModal">
-  <div class="sm-scrim" data-close></div>
-  <div class="sm-panel">
-    <button class="sm-close" data-close>&times;</button>
-    <div class="sm-hero"><img id="smHero" src="" alt=""><div class="sm-scrim2"></div>
-      <div class="sm-cap"><span class="sm-tag" id="smTag"></span><h2 id="smName"></h2></div>
-    </div>
-    <div class="sm-body">
-      <p class="sm-lead" id="smLead"></p>
-      <div class="sm-amen" id="smAmen"></div>
-      <div class="sm-gal" id="smGal"></div>
-      <div class="sm-foot">
-        <div class="pr"><span data-i18n="book.from">à partir de</span> <b id="smPrice"></b></div>
-        <button class="btn btn-solid" id="smBook" data-i18n="book.book_suite">Réserver cette suite</button>
+<div class="suite-page" id="suitePage">
+  <div class="sp-inner">
+    <div class="sp-hero">
+      <div class="sp-bg" id="spBg"></div><div class="sp-scrim"></div>
+      <div class="sp-cap">
+        <span class="sp-tag" id="spTag"></span>
+        <h1 id="spName"></h1>
+        <div class="sp-pr"><span data-i18n="book.from">à partir de</span> <b id="spPrice"></b> <span data-i18n="book.pernight">/ nuit</span></div>
       </div>
     </div>
+    <div class="sp-wrap">
+      <div class="sp-story"><span class="eyebrow" data-i18n="suites.eyebrow">Nos chambres</span><p class="sp-lead" id="spLead"></p></div>
+      <div class="sp-facts" id="spFacts"></div>
+    </div>
+    <div class="sp-feat" id="spFeat"></div>
+    <div class="sp-wrap sp-amen-sec"><h2 data-i18n="suite.amenities">Équipements</h2><div class="sp-amen" id="spAmen"></div></div>
+    <div class="sp-gal-sec"><h2 data-i18n="suite.gallery_t">Galerie de la suite</h2><div class="sp-gal" id="spGal"></div></div>
+    <div class="sp-book">
+      <span class="eyebrow" data-i18n="book.eyebrow">Réservation directe</span>
+      <h2 id="spBookName"></h2>
+      <div class="sp-bpr"><span data-i18n="book.from">à partir de</span> <b id="spPrice2"></b> <span data-i18n="book.pernight">/ nuit</span></div>
+      <button class="btn btn-solid" id="spBook" data-i18n="book.book_suite">Réserver cette suite</button>
+    </div>
+    <div class="sp-others"><h2 data-i18n="suite.others_t">Découvrir les autres suites</h2><div class="sp-others-grid" id="spOthers"></div></div>
   </div>
+  <button class="sp-back" id="spBack"><span class="ar">&larr;</span> <span data-i18n="ui.back">Retour</span></button>
 </div>
 
 <div class="preview-flag"><span data-i18n="ui.preview">Aperçu de concept</span> &middot; <b>Likwiid</b></div>
@@ -499,7 +539,7 @@ const EXTRAS=[
 const GUESTS=[['book.guest_1',1],['book.guest_2',2],['book.guest_3',3],['book.guest_2_1',3],['book.guest_4',4]];
 
 /* ---------- i18n ---------- */
-const FR={"nav.maison": "La Maison", "nav.suites": "Suites", "nav.galerie": "Galerie", "nav.avis": "Avis", "nav.reserver": "Réserver", "hero.eyebrow": "Maison d'hôtes · Médina de Nabeul", "hero.t1": "Sentez-vous", "hero.t2": "comme à la maison", "hero.lede": "Une maison d'hôtes haut de gamme qui conjugue confort ultra contemporain et hospitalité tunisienne, au coeur de la médina.", "hero.cta": "Réserver votre séjour", "hero.cue": "Découvrir", "maison.eyebrow": "La Maison", "maison.t1": "Un riad d'exception,", "maison.t2": "à quelques pas de la mer", "maison.p1": "À une heure de Tunis, Dar Sabri est une maison d'hôtes haut de gamme au concept inédit. Quatre suites uniques, une décoration raffinée, une piscine à débordement et un hammam sur le toit. Ici, le temps ralentit.", "maison.p2": "Profitez de la terrasse bain de soleil, de la table d'hôtes, de la flânerie au coeur de la médina et de la rencontre des artisans de Nabeul.", "maison.btn": "Découvrir les suites", "stats.s1l": "Suites uniques", "stats.s2l": "Hôtes", "stats.s3": "Piscine", "stats.s3l": "À débordement, sur le toit", "stats.s4": "Hammam", "stats.s4l": "& table d'hôtes", "suites.eyebrow": "Nos chambres", "suites.title": "Quatre suites, quatre histoires", "suites.explore": "Découvrir la suite", "suite.or.name": "Suite Or", "suite.or.tag": "Rez-de-chaussée", "suite.or.short": "Une suite traditionnelle tunisienne, tout en longueur, baignée de lumière et de matériaux nobles.", "suite.or.long": "Au rez-de-chaussée, la Suite Or déroule une enfilade d'espaces baignés de lumière naturelle. Les matériaux nobles et l'artisanat local y dialoguent avec un confort résolument contemporain, pour une parenthèse hors du temps.", "suite.argent.name": "Suite Argent", "suite.argent.tag": "Art & couleur", "suite.argent.short": "Caractère et lumière, une suite vivante où l'art et l'artisanat tunisien se répondent.", "suite.argent.long": "Vibrante et lumineuse, la Suite Argent célèbre l'art et l'artisanat tunisien. Les couleurs et les pièces chinées y composent une atmosphère joyeuse et raffinée, à deux pas de la médina.", "suite.ymen.name": "Ymen Suite", "suite.ymen.tag": "Art contemporain", "suite.ymen.short": "À l'étage, signée par l'artiste peintre tunisienne Ymen Berhouma. Pour les amateurs d'art.", "suite.ymen.long": "À l'étage, la Ymen Suite est une véritable oeuvre habitée. L'artiste peintre tunisienne Ymen Berhouma a prêté son nom et son univers à cette suite d'exception, pensée pour les amateurs d'art contemporain.", "suite.ebene.name": "Suite Ébène", "suite.ebene.tag": "Caractère", "suite.ebene.short": "Le contraste du noir et du blanc, une suite au caractère affirmé et résolument contemporaine.", "suite.ebene.long": "Tout en contrastes, la Suite Ébène joue le noir et le blanc avec des lignes épurées et un art graphique assumé. Une suite au caractère fort, pour les amoureux du design et des ambiances contemporaines.", "suite.amenities": "Équipements", "suite.a.bath": "Salle de bain privée", "suite.a.ac": "Climatisation", "suite.a.wifi": "Wi-Fi gratuit", "suite.a.bf": "Petit-déjeuner inclus", "suite.a.pool": "Accès piscine sur le toit", "suite.a.hammam": "Accès hammam", "suite.a.view": "Vue patio", "suite.a.size": "2 personnes", "feature.eyebrow": "L'heure dorée", "feature.t1": "Quand le soir se dépose", "feature.t2": "sur la médina", "feature.p": "Quand les premiers voiles du soir se posent sur Nabeul, le riad s'illumine d'une ambiance romantique à souhait. C'est le moment de prédilection pour une table d'hôtes sous les étoiles.", "book.eyebrow": "Réservation directe", "book.title": "Réservez en direct, en français", "book.sub": "Choisissez vos dates et réservez sans jamais quitter Dar Sabri. Pas de détour, pas de commission.", "book.badge": "Disponibilités en temps réel", "book.arrival": "Arrivée", "book.departure": "Départ", "book.guests": "Voyageurs", "book.selectdates": "Choisir les dates", "book.check": "Vérifier", "book.nights": "nuits", "book.night": "nuit", "book.note": "Confirmation immédiate · Meilleur tarif garanti en direct · Paiement sécurisé", "book.choose_suite": "Choisissez votre suite", "book.extras_title": "Ajoutez à votre séjour", "book.extra_dinner": "Table d'hôtes (dîner)", "book.extra_dinner_d": "Dîner tunisien raffiné, par personne", "book.extra_hammam": "Rituel hammam", "book.extra_hammam_d": "Gommage et soin traditionnel", "book.extra_transfer": "Transfert aéroport", "book.extra_transfer_d": "Tunis-Carthage, aller simple", "book.extra_breakfast": "Petit-déjeuner en chambre", "book.extra_breakfast_d": "Servi dans votre suite", "book.summary": "Votre séjour", "book.subtotal": "Sous-total", "book.total": "Total", "book.pernight": "/ nuit", "book.from": "à partir de", "book.book_now": "Réserver maintenant", "book.book_suite": "Réserver cette suite", "book.select": "Choisir", "book.selected": "Sélectionnée", "book.guest_1": "1 adulte", "book.guest_2": "2 adultes", "book.guest_3": "3 adultes", "book.guest_2_1": "2 adultes, 1 enfant", "book.guest_4": "4 adultes", "book.added": "Ajouté", "book.add": "Ajouter", "book.clear": "Effacer", "gallery.eyebrow": "Galerie", "gallery.title": "Vivre Dar Sabri", "reviews.eyebrow": "Ils ont séjourné chez nous", "reviews.title": "Une adresse que l'on n'oublie pas", "reviews.l1": "Personnel", "reviews.l2": "Propreté", "reviews.l3": "Note globale", "reviews.l4": "Maisons d'hôtes à Nabeul", "reviews.r1": "Un véritable havre de paix au coeur de la médina. L'accueil et la décoration sont d'un raffinement rare.", "reviews.r1w": "Voyageur · Booking", "reviews.r2": "La piscine sur le toit au coucher du soleil, inoubliable. On se sent vraiment comme à la maison.", "reviews.r2w": "Voyageuse · TripAdvisor", "reviews.r3": "Chaque suite est une oeuvre d'art. Un séjour hors du temps, une hospitalité exceptionnelle.", "reviews.r3w": "Voyageur · Google", "footer.desc": "Maison d'hôtes haut de gamme au coeur de la médina de Nabeul. Quatre suites, une piscine à débordement, un hammam, une table d'hôtes.", "footer.visit": "Visiter", "footer.contact": "Contact", "footer.addr": "Médina de Nabeul, Tunisie", "footer.copyright": "© 2026 Dar Sabri · Médina de Nabeul", "footer.preview": "Aperçu de concept réalisé par Likwiid", "ui.close": "Fermer", "ui.preview": "Aperçu de concept", "ui.from": "à partir de", "ui.checkin": "Arrivée", "ui.checkout": "Départ", "ui.clear_dates": "Réinitialiser", "ui.apply": "Valider", "months": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"], "days": ["L", "M", "M", "J", "V", "S", "D"], "book.confirmed_t": "Votre demande est confirmée", "book.confirmed_p": "Un grand merci. Nous vous envoyons votre confirmation par email dans quelques instants.", "ui.included": "Inclus"};
+const FR={"nav.maison": "La Maison", "nav.suites": "Suites", "nav.galerie": "Galerie", "nav.avis": "Avis", "nav.reserver": "Réserver", "hero.eyebrow": "Maison d'hôtes · Médina de Nabeul", "hero.t1": "Sentez-vous", "hero.t2": "comme à la maison", "hero.lede": "Une maison d'hôtes haut de gamme qui conjugue confort ultra contemporain et hospitalité tunisienne, au coeur de la médina.", "hero.cta": "Réserver votre séjour", "hero.cue": "Découvrir", "maison.eyebrow": "La Maison", "maison.t1": "Un riad d'exception,", "maison.t2": "à quelques pas de la mer", "maison.p1": "À une heure de Tunis, Dar Sabri est une maison d'hôtes haut de gamme au concept inédit. Quatre suites uniques, une décoration raffinée, une piscine à débordement et un hammam sur le toit. Ici, le temps ralentit.", "maison.p2": "Profitez de la terrasse bain de soleil, de la table d'hôtes, de la flânerie au coeur de la médina et de la rencontre des artisans de Nabeul.", "maison.btn": "Découvrir les suites", "stats.s1l": "Suites uniques", "stats.s2l": "Hôtes", "stats.s3": "Piscine", "stats.s3l": "À débordement, sur le toit", "stats.s4": "Hammam", "stats.s4l": "& table d'hôtes", "suites.eyebrow": "Nos chambres", "suites.title": "Quatre suites, quatre histoires", "suites.explore": "Découvrir la suite", "suite.or.name": "Suite Or", "suite.or.tag": "Rez-de-chaussée", "suite.or.short": "Une suite traditionnelle tunisienne, tout en longueur, baignée de lumière et de matériaux nobles.", "suite.or.long": "Au rez-de-chaussée, la Suite Or déroule une enfilade d'espaces baignés de lumière naturelle. Les matériaux nobles et l'artisanat local y dialoguent avec un confort résolument contemporain, pour une parenthèse hors du temps.", "suite.argent.name": "Suite Argent", "suite.argent.tag": "Art & couleur", "suite.argent.short": "Caractère et lumière, une suite vivante où l'art et l'artisanat tunisien se répondent.", "suite.argent.long": "Vibrante et lumineuse, la Suite Argent célèbre l'art et l'artisanat tunisien. Les couleurs et les pièces chinées y composent une atmosphère joyeuse et raffinée, à deux pas de la médina.", "suite.ymen.name": "Ymen Suite", "suite.ymen.tag": "Art contemporain", "suite.ymen.short": "À l'étage, signée par l'artiste peintre tunisienne Ymen Berhouma. Pour les amateurs d'art.", "suite.ymen.long": "À l'étage, la Ymen Suite est une véritable oeuvre habitée. L'artiste peintre tunisienne Ymen Berhouma a prêté son nom et son univers à cette suite d'exception, pensée pour les amateurs d'art contemporain.", "suite.ebene.name": "Suite Ébène", "suite.ebene.tag": "Caractère", "suite.ebene.short": "Le contraste du noir et du blanc, une suite au caractère affirmé et résolument contemporaine.", "suite.ebene.long": "Tout en contrastes, la Suite Ébène joue le noir et le blanc avec des lignes épurées et un art graphique assumé. Une suite au caractère fort, pour les amoureux du design et des ambiances contemporaines.", "suite.amenities": "Équipements", "suite.a.bath": "Salle de bain privée", "suite.a.ac": "Climatisation", "suite.a.wifi": "Wi-Fi gratuit", "suite.a.bf": "Petit-déjeuner inclus", "suite.a.pool": "Accès piscine sur le toit", "suite.a.hammam": "Accès hammam", "suite.a.view": "Vue patio", "suite.a.size": "2 personnes", "feature.eyebrow": "L'heure dorée", "feature.t1": "Quand le soir se dépose", "feature.t2": "sur la médina", "feature.p": "Quand les premiers voiles du soir se posent sur Nabeul, le riad s'illumine d'une ambiance romantique à souhait. C'est le moment de prédilection pour une table d'hôtes sous les étoiles.", "book.eyebrow": "Réservation directe", "book.title": "Réservez en direct, en français", "book.sub": "Choisissez vos dates et réservez sans jamais quitter Dar Sabri. Pas de détour, pas de commission.", "book.badge": "Disponibilités en temps réel", "book.arrival": "Arrivée", "book.departure": "Départ", "book.guests": "Voyageurs", "book.selectdates": "Choisir les dates", "book.check": "Vérifier", "book.nights": "nuits", "book.night": "nuit", "book.note": "Confirmation immédiate · Meilleur tarif garanti en direct · Paiement sécurisé", "book.choose_suite": "Choisissez votre suite", "book.extras_title": "Ajoutez à votre séjour", "book.extra_dinner": "Table d'hôtes (dîner)", "book.extra_dinner_d": "Dîner tunisien raffiné, par personne", "book.extra_hammam": "Rituel hammam", "book.extra_hammam_d": "Gommage et soin traditionnel", "book.extra_transfer": "Transfert aéroport", "book.extra_transfer_d": "Tunis-Carthage, aller simple", "book.extra_breakfast": "Petit-déjeuner en chambre", "book.extra_breakfast_d": "Servi dans votre suite", "book.summary": "Votre séjour", "book.subtotal": "Sous-total", "book.total": "Total", "book.pernight": "/ nuit", "book.from": "à partir de", "book.book_now": "Réserver maintenant", "book.book_suite": "Réserver cette suite", "book.select": "Choisir", "book.selected": "Sélectionnée", "book.guest_1": "1 adulte", "book.guest_2": "2 adultes", "book.guest_3": "3 adultes", "book.guest_2_1": "2 adultes, 1 enfant", "book.guest_4": "4 adultes", "book.added": "Ajouté", "book.add": "Ajouter", "book.clear": "Effacer", "gallery.eyebrow": "Galerie", "gallery.title": "Vivre Dar Sabri", "reviews.eyebrow": "Ils ont séjourné chez nous", "reviews.title": "Une adresse que l'on n'oublie pas", "reviews.l1": "Personnel", "reviews.l2": "Propreté", "reviews.l3": "Note globale", "reviews.l4": "Maisons d'hôtes à Nabeul", "reviews.r1": "Un véritable havre de paix au coeur de la médina. L'accueil et la décoration sont d'un raffinement rare.", "reviews.r1w": "Voyageur · Booking", "reviews.r2": "La piscine sur le toit au coucher du soleil, inoubliable. On se sent vraiment comme à la maison.", "reviews.r2w": "Voyageuse · TripAdvisor", "reviews.r3": "Chaque suite est une oeuvre d'art. Un séjour hors du temps, une hospitalité exceptionnelle.", "reviews.r3w": "Voyageur · Google", "footer.desc": "Maison d'hôtes haut de gamme au coeur de la médina de Nabeul. Quatre suites, une piscine à débordement, un hammam, une table d'hôtes.", "footer.visit": "Visiter", "footer.contact": "Contact", "footer.addr": "Médina de Nabeul, Tunisie", "footer.copyright": "© 2026 Dar Sabri · Médina de Nabeul", "footer.preview": "Aperçu de concept réalisé par Likwiid", "ui.close": "Fermer", "ui.preview": "Aperçu de concept", "ui.from": "à partir de", "ui.checkin": "Arrivée", "ui.checkout": "Départ", "ui.clear_dates": "Réinitialiser", "ui.apply": "Valider", "months": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"], "days": ["L", "M", "M", "J", "V", "S", "D"], "book.confirmed_t": "Votre demande est confirmée", "book.confirmed_p": "Un grand merci. Nous vous envoyons votre confirmation par email dans quelques instants.", "ui.included": "Inclus", "ui.back": "Retour", "suite.gallery_t": "Galerie de la suite", "suite.others_t": "Découvrir les autres suites", "fact.capacity": "Capacité", "fact.floor": "Niveau", "fact.bath": "Salle de bain", "fact.style": "Ambiance", "fact.bath_v": "Privée", "suite.or.floor": "Rez-de-chaussée", "suite.argent.floor": "Rez-de-chaussée", "suite.ymen.floor": "À l'étage", "suite.ebene.floor": "À l'étage"};
 const I18N={fr:FR};
 let LANG='fr';
 function t(k){return (I18N[LANG]&&I18N[LANG][k]!=null?I18N[LANG][k]:FR[k]);}
@@ -631,28 +671,38 @@ document.getElementById('bkConfirm').addEventListener('click',()=>{
   document.getElementById('bkDone').scrollIntoView({behavior:'smooth',block:'center'});
 });
 
-/* ---------- suite modal ---------- */
-const modal=document.getElementById('suiteModal');
+/* ---------- full suite page ---------- */
+const sPage=document.getElementById('suitePage');
 function openSuite(id){
-  const s=SUITES.find(x=>x.id===id);
-  document.getElementById('smHero').src='img/'+s.img+'.jpg';
-  document.getElementById('smTag').textContent=t('suite.'+id+'.tag');
-  document.getElementById('smName').textContent=t('suite.'+id+'.name');
-  document.getElementById('smLead').textContent=t('suite.'+id+'.long');
-  document.getElementById('smPrice').textContent=s.price+' €';
-  const am=document.getElementById('smAmen');am.innerHTML='';
-  s.amen.forEach(a=>{const d=document.createElement('div');d.className='a';d.textContent=t('suite.a.'+a);am.appendChild(d);});
-  const ga=document.getElementById('smGal');ga.innerHTML='';
-  s.gallery.forEach(im=>{const i=document.createElement('img');i.className='img-tone';i.src='img/'+im+'.jpg';i.loading='lazy';ga.appendChild(i);});
-  document.getElementById('smBook').onclick=()=>{pickSuite=SUITES.indexOf(s);closeSuite();renderBkSuites();
+  const s=SUITES.find(x=>x.id===id), idx=SUITES.indexOf(s);
+  document.getElementById('spBg').style.backgroundImage="url(img/"+s.img+".jpg)";
+  document.getElementById('spTag').textContent=t('suite.'+id+'.tag');
+  document.getElementById('spName').textContent=t('suite.'+id+'.name');
+  document.getElementById('spLead').textContent=t('suite.'+id+'.long');
+  document.getElementById('spPrice').textContent=s.price+' €';
+  document.getElementById('spPrice2').textContent=s.price+' €';
+  document.getElementById('spBookName').textContent=t('suite.'+id+'.name');
+  // facts
+  const facts=[['fact.capacity',t('suite.a.size')],['fact.floor',t('suite.'+id+'.floor')],['fact.bath',t('fact.bath_v')],['fact.style',t('suite.'+id+'.tag')]];
+  document.getElementById('spFacts').innerHTML=facts.map(f=>`<div class="sp-fact"><div class="fv">${f[1]}</div><div class="fl">${t(f[0])}</div></div>`).join('');
+  // feature image (second gallery image)
+  document.getElementById('spFeat').style.backgroundImage="url(img/"+(s.gallery[1]||s.img)+".jpg)";
+  // amenities
+  document.getElementById('spAmen').innerHTML=s.amen.map(a=>`<div class="a">${t('suite.a.'+a)}</div>`).join('');
+  // gallery
+  document.getElementById('spGal').innerHTML=s.gallery.map(im=>`<div class="g"><img class="img-tone" src="img/${im}.jpg" alt="" loading="lazy"></div>`).join('');
+  // other suites
+  document.getElementById('spOthers').innerHTML=SUITES.filter(x=>x.id!==id).map(o=>`<div class="sp-other" data-go="${o.id}"><img class="img-tone" src="img/${o.img}.jpg" alt=""><div class="ov"></div><div class="on">${t('suite.'+o.id+'.name')}</div></div>`).join('');
+  document.querySelectorAll('#spOthers .sp-other').forEach(el=>el.onclick=()=>{sPage.scrollTo({top:0});openSuite(el.dataset.go);});
+  document.getElementById('spBook').onclick=()=>{pickSuite=idx;closeSuite();renderBkSuites();
     if(!selStart){const a=new Date(today);a.setDate(a.getDate()+7);const b=new Date(a);b.setDate(b.getDate()+3);selStart=a;selEnd=b;updateDatesLabel();}
     document.getElementById('step2').classList.add('show');updateSummary();
-    document.getElementById('reserver').scrollIntoView({behavior:'smooth'});};
-  modal.classList.add('open');document.body.style.overflow='hidden';
+    setTimeout(()=>document.getElementById('reserver').scrollIntoView({behavior:'smooth'}),120);};
+  sPage.scrollTop=0;sPage.classList.add('open');document.body.style.overflow='hidden';
 }
-function closeSuite(){modal.classList.remove('open');document.body.style.overflow='';}
-modal.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeSuite));
-addEventListener('keydown',e=>{if(e.key==='Escape')closeSuite();});
+function closeSuite(){sPage.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('spBack').addEventListener('click',closeSuite);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&sPage.classList.contains('open'))closeSuite();});
 
 /* ---------- nav, reveal, parallax, menu, lenis ---------- */
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
