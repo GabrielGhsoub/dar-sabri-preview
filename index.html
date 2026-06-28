@@ -114,11 +114,11 @@ nav.scrolled .menu-tog span{background:var(--ink)}
 .suite:hover .cap .sdesc{max-height:90px;opacity:1}
 .suite .tag{position:absolute;top:22px;left:22px;z-index:2;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,.55);padding:6px 12px;border-radius:1px;background:rgba(20,28,44,.18)}
 
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gallery .gi{position:relative;overflow:hidden;border-radius:2px;height:260px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery .gi{position:relative;overflow:hidden;border-radius:2px;height:300px}
 .gallery .gi img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease}
 .gallery .gi:hover img{transform:scale(1.1)}
-.gallery .gi.feat{grid-column:span 2;grid-row:span 2;height:534px}
+.gallery .gi.feat{grid-row:span 2;height:614px}
 
 .feature{position:relative;height:90vh;min-height:520px;display:flex;align-items:center;overflow:hidden}
 .feature .bg{position:absolute;inset:-10% 0;height:120%;background:url(img/evening-corridor.jpg) center/cover;will-change:transform}
@@ -178,7 +178,7 @@ footer .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   .split{grid-template-columns:1fr;gap:34px}.imgwrap img{height:380px}
   .stats .row{grid-template-columns:1fr 1fr;gap:34px}.stats .sep{display:none}
   .suites-grid{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr 1fr}.gallery .gi.feat{grid-column:span 2;grid-row:auto;height:260px}
+  .gallery{grid-template-columns:1fr 1fr}.gallery .gi{height:200px}.gallery .gi.feat{grid-row:auto;height:200px}
   .bk-form{grid-template-columns:1fr 1fr}.bk-go{grid-column:span 2;padding:18px}
   .bk-rooms,.rev-cards,footer .fcols{grid-template-columns:1fr}
   .pad{padding:80px 0}
@@ -318,7 +318,6 @@ footer .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
       <div class="gi reveal d2"><img src="img/hammam.jpg" alt="Hammam" loading="lazy"></div>
       <div class="gi reveal"><img src="img/gallery1.jpg" alt="Détail" loading="lazy"></div>
       <div class="gi reveal d1"><img src="img/gallery3.jpg" alt="Couloir" loading="lazy"></div>
-      <div class="gi reveal d2"><img src="img/suite-ebene.jpg" alt="Art contemporain" loading="lazy"></div>
     </div>
   </div>
 </section>
